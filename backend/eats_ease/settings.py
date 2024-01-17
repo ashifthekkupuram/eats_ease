@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'djoser',
     'rest_framework',
     
+    
 ]
 
 MIDDLEWARE = [
@@ -85,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'eats_ease',
         'USER': 'postgres',
-        'PASSWORD': 'ashi',
+        'PASSWORD': 'ashi5451',
         'HOST': 'localhost',
         'PORT': '5432'
     }
@@ -170,6 +171,9 @@ DJOSER = {
     }     
 }
 REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES':[
+        'rest_framwork.permissions.IsAuthenticated'
+    ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
 

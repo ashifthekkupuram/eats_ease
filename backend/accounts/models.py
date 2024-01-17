@@ -17,8 +17,8 @@ class UserAccountManager(BaseUserManager):
 
 class User(AbstractBaseUser,PermissionsMixin,BaseUserManager):
     email = models.EmailField(max_length=255,unique=True)
-    username = models.CharField(max_length=255,unique=True,blank=True,null=True)
-    name = models.CharField(max_length=255)
+    username = models.CharField(max_length=255,unique=True)
+    name = models.CharField(max_length=255, null=True)
     profile = models.ImageField(upload_to='profiles/',blank=True,null=True)
     followers = models.ManyToManyField('self', symmetrical=False, blank=True,related_name='following')
     is_active = models.BooleanField(default=True)
